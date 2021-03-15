@@ -17,8 +17,6 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {},
-    "declaration": true,
-    "declarationDir": "./types",
     "plugins": [
       {
         "transform": "typescript-transform-paths",
