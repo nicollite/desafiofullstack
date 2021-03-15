@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Questions } from "src/graphql";
+import { Questions } from "src/graphql-types";
 
 export const stackExchangeApi = axios.create({ baseURL: "https://api.stackexchange.com/2.2" });
 

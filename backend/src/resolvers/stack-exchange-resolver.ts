@@ -1,4 +1,4 @@
-import { QueryQuestionsArgs } from "src/graphql";
+import { QueryQuestionsArgs } from "src/graphql-types";
 import { ApiQuestionsGet, stackExchangeApi } from "../services/stack-exchange-api";
 
 export const stackExchangeResolver = {
