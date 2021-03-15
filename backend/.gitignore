@@ -1,15 +1,13 @@
-# dependencies
+# Dependencies
 /node_modules
 
-# testing
+# Testing
 /coverage
 
-# production
-/build
+# Build files
+/dist
 
 # misc
 .env*
-
-
 yarn-debug.log*
 yarn-error.log*
