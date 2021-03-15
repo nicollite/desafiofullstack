@@ -2,6 +2,15 @@ type Query {
   questions(tags: String!, score: String, sort: String, limit: String): [Questions]
 }
 
+enum Sort {
+  activity
+  votes
+  creation
+  hot
+  week
+  month
+}
+
 type Questions {
   tags: [String]
   owner: Owner

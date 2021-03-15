@@ -26,6 +26,15 @@ export type QueryQuestionsArgs = {
   limit?: Maybe<Scalars['String']>;
 };
 
+export enum Sort {
+  Activity = 'activity',
+  Votes = 'votes',
+  Creation = 'creation',
+  Hot = 'hot',
+  Week = 'week',
+  Month = 'month'
+}
+
 export type Questions = {
   __typename?: 'Questions';
   tags?: Maybe<Array<Maybe<Scalars['String']>>>;
@@ -132,6 +141,7 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
 export type ResolversTypes = {
   Query: ResolverTypeWrapper<{}>;
   String: ResolverTypeWrapper<Scalars['String']>;
+  Sort: Sort;
   Questions: ResolverTypeWrapper<Questions>;
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
   Int: ResolverTypeWrapper<Scalars['Int']>;
