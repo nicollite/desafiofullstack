@@ -5,7 +5,7 @@ export const stackExchangeApi = axios.create({ baseURL: "https://api.stackexchan
 
 export interface ApiQuestionsGet {
   items: Questions[];
-  has_more: true;
-  quota_max: 300;
-  quota_remaining: 286;
+  has_more: boolean;
+  quota_max: number;
+  quota_remaining: number;
 }
