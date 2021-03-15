@@ -1,21 +1,19 @@
-import { QueryQuestionsArgs } from "src/graphql-types";
+import { QueryQuestionsArgs, Questions } from "src/graphql-types";
 import { ApiQuestionsGet, stackExchangeApi } from "../services/stack-exchange-api";
 
-export const stackExchangeResolver = {
-  questions: getQuestions,
-};
-
-export async function getQuestions(args: QueryQuestionsArgs) {
-  const { score, sort, limit = 10, tags } = args;
-  const params = { score, sort, limit, tagged: tags, site: "stackoverflow" };
-  console.log(args);
+/**
+ * Get questions from stack exchange api, and acts as a resolver for questions field
+ * @param args Graphql query questions args
+ * @returns An array of Questions
+ */
+export async function getQuestions(args: QueryQuestionsArgs): Promise<Questions[]> {
+  // Destruct args and set in the params
+  const { score, sort, limit = 10, tags = "" } = args;
+  const params = { score, sort, pagesize: limit, tagged: tags, site: "stackoverflow" };
 
   return stackExchangeApi
     .get<ApiQuestionsGet>("/questions", { params })
-    .then(res => {
-      console.log(res.data);
-      return res.data.items;
-    })
+    .then(res => res.data.items)
     .catch(err => {
       console.error("Error occurred getting questions");
       console.error(err.response.data);

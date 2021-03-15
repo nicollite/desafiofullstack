@@ -1,10 +1,18 @@
 import { buildASTSchema } from "graphql";
 import { env } from "node:process";
-import { stackExchangeResolver } from "./resolvers/stack-exchange-resolver";
+import { getQuestions } from "./resolvers/stack-exchange-resolver";
 import * as schemas from "./schemas/schemas.graphql";
 
+/** Root value for graphqlHTTP function with the resolvers */
+const rootValue = {
+  questions: getQuestions,
+};
+
+// Build schema for graphqlHTTP function
 export default {
+  // Set schema from DocumentNode
   schema: buildASTSchema(schemas),
-  rootValue: stackExchangeResolver,
-  graphiql: env.NODE_ENV === "dev", // Set graphiql interface on dev mode
+  rootValue,
+  // Set graphiql interface on dev mode
+  graphiql: env.NODE_ENV === "dev",
 };

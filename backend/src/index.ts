@@ -7,6 +7,7 @@ import cors from "cors";
 import { graphqlHTTP } from "express-graphql";
 import graphqlHttpConfig from "./graphql-http-config";
 
+// Use source-map-support install in prod mode
 if (env.NODE_ENV === "prod") install();
 
 const app = express();
