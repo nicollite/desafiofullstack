@@ -1,5 +1,5 @@
 import { buildASTSchema } from "graphql";
-import { env } from "node:process";
+import { env } from "./env";
 import { getQuestions } from "./resolvers/stack-exchange-resolver";
 import * as schemas from "./schemas/schemas.graphql";
 
