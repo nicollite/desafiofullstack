@@ -1,0 +1,125 @@
+.flex {
+  display: flex;
+  --flex-gap: 10px;
+}
+.flex.inline {
+  display: inline-flex;
+}
+.flex.fullsize {
+  width: 100vw;
+  height: 100vh;
+}
+.flex.column {
+  flex-direction: column;
+}
+.flex.column.reverse {
+  flex-direction: column-reverse;
+}
+.flex.reverse {
+  flex-direction: row-reverse;
+}
+.flex.wrap {
+  flex-wrap: wrap;
+}
+.flex.wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+.flex.justify-flex-start {
+  justify-content: flex-start;
+}
+.flex.justify-flex-end {
+  justify-content: flex-end;
+}
+.flex.justify-center {
+  justify-content: center;
+}
+.flex.justify-space-around {
+  justify-content: space-around;
+}
+.flex.justify-space-between {
+  justify-content: space-between;
+}
+.flex.align-flex-start {
+  align-items: flex-start;
+}
+.flex.align-flex-end {
+  align-items: flex-end;
+}
+.flex.align-center {
+  align-items: center;
+}
+.flex.align-stretch {
+  align-items: stretch;
+}
+.flex.align-baseline {
+  align-items: baseline;
+}
+.flex.content-flex-start {
+  align-content: flex-start;
+}
+.flex.content-flex-end {
+  align-content: flex-end;
+}
+.flex.content-center {
+  align-content: center;
+}
+.flex.content-space-around {
+  align-content: space-around;
+}
+.flex.content-space-between {
+  align-content: space-between;
+}
+.flex.content-stretch {
+  align-content: stretch;
+}
+.flex.center {
+  justify-content: center;
+  align-items: center;
+}
+.flex.gaps.column:not(.reverse) > :not(:last-child) {
+  margin-bottom: var(--flex-gap, 10px);
+}
+.flex.gaps.column.reverse > :not(:last-child) {
+  margin-top: var(--flex-gap, 10px);
+}
+.flex.gaps:not(.column):not(.reverse) > :not(:last-child) {
+  margin-right: var(--flex-gap, 10px);
+}
+.flex.gaps:not(.column).reverse > :not(:last-child) {
+  margin-left: var(--flex-gap, 10px);
+}
+.flex > *.left {
+  margin-left: 0;
+  margin-right: auto;
+}
+.flex > *.right {
+  margin-right: 0;
+  margin-left: auto;
+}
+.flex > *.top {
+  margin-top: 0;
+  margin-bottom: auto;
+}
+.flex > *.bottom {
+  margin-bottom: 0;
+  margin-top: auto;
+}
+.flex > *.self-flex-start {
+  align-self: flex-start;
+}
+.flex > *.self-flex-end {
+  align-self: flex-end;
+}
+.flex > *.self-center {
+  align-self: center;
+}
+.flex > *.self-stretch {
+  align-self: stretch;
+}
+.flex > *.self-baseline {
+  align-self: baseline;
+}
+.flex > input,
+.flex > textarea {
+  min-width: 0;
+}
