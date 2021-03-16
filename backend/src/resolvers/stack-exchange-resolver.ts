@@ -9,7 +9,7 @@ import { ApiQuestionsGet, stackExchangeApi } from "../services/stack-exchange-ap
 export async function getQuestions(args: QueryQuestionsArgs): Promise<Questions[]> {
   // Destruct args and set in the params
   const { score, sort, limit = 10, tags = "" } = args;
-  const params = { score, sort, pagesize: limit, tagged: tags, site: "stackoverflow" };
+  const params = { min: score, sort, pagesize: limit, tagged: tags, site: "stackoverflow" };
 
   return stackExchangeApi
     .get<ApiQuestionsGet>("/questions", { params })
