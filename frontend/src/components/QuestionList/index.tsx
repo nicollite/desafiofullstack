@@ -59,20 +59,22 @@ function QuestionList(props: QuestionListProps) {
 
             <Summary className="flex column">
               <QuestionTitle>
-                <a href={question.link} target="_blank">
+                <a href={question.link} target="_blank" rel="noreferrer">
                   {question.title}
                 </a>
               </QuestionTitle>
               <TagsWrapper className="flex gaps">
                 {question.tags.map((tag, index) => (
-                  <Tag key={index} href={getTagLink(tag)} target="_blank">
+                  <Tag key={index} href={getTagLink(tag)} target="_blank" rel="noreferrer">
                     {tag}
                   </Tag>
                 ))}
               </TagsWrapper>
               <QuestionTime className="flex justify-flex-end gaps">
                 <span>{getTimeString(question)}</span>
-                <a href={question.owner.link}>{question.owner.display_name}</a>
+                <a href={question.owner.link} target="_blank" rel="noreferrer">
+                  {question.owner.display_name}
+                </a>
                 <span>{question.owner.reputation}</span>
               </QuestionTime>
             </Summary>
